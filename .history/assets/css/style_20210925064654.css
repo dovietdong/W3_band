@@ -1,0 +1,558 @@
+*{/*reset khoang cach css*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*tao font chu cho toan trang, font-family co tinh ke thua*/
+/* 2 thuoc tinh dau font-family la font chu co tren may,
+thuoc tinh cuoi cung la ho cua font chu nay*/
+/* nó sẽ lấy lần lượt từng font chữ tìm thấy trên máy
+nếu ko có nó sẽ chuyển sang họ phông chữ để thay thế*/
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    /* tạo màu backgound để chỉnh sủa subnav*/
+    /* background-color: #333;
+    height: 500px; */
+}
+
+/* đặt xuống dưới cùng các item có css float
+ tác dụng làm cho thẻ div có thể bao toàn bộ các 
+ thẻ con có thuộc tính float */
+ /* tính chất của float làm cho thẻ cha bị bật ra ko ôm vào thẻ con */
+
+ /* comon */
+ /* viết các class hay đc sử dụng gọi lại */
+ 
+ /* class này đã đc thay thế */
+/* .clear{
+    clear: both;
+} */
+
+/* tạo lớp giả tự động dưới mõi class row*/
+/* thay cho class clear */
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+/* thuộc tính chữ màu trắng dùng nhiều nên làm 1 class css riêng và thêm !important */
+.text-white{
+    color: #fff !important;
+}
+
+/* class hàng dung lại*/
+.row{
+    margin-right: -9px;
+    margin-left: -9px;
+}
+
+/* class cột dùng lại */
+.col{
+    float: left;
+    padding-right: 9px;
+    padding-left: 9px;
+}
+
+/* class chia cột 3 */
+.col-third{
+    width: 33.333333333%;
+}
+
+/* class chia cột 2 */
+.col-half{
+    width: 50%;
+}
+
+.col-full{
+    width: 100%;
+}
+
+.btn{
+    padding: 11px 20px;
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    margin-top: 15px;
+    border: none;
+    cu
+}
+
+/*
+1. từ ngoài vào trong
+2. từ trên xuống dưới
+3. từ tổng quan đến chi tiết.
+
+/*
+1. vi tri 
+2. kich thuoc: width, height 
+3. màu sắc
+4. hình dạng : font chữ, hình vuông, hình tròn...ẩn hiện,...
+*/
+/* main */
+#main{
+    position: relative;
+}
+
+#header{
+    /* giuữ cho header luôn  ơ trên */ 
+    position: fixed;
+    /* dan đều header toàn trang */
+    top: 0;
+    left: 0;
+    right: 0;
+    /*tạo chiều cao cho header
+    nhưng ko cần chiều rộng vì mặc định chiều rộng nó toàn màn hình do thẻ cha rồi*/
+    height: 46px;
+    background-color: #000;
+    /*nổi cái header lên 3 lớp */
+    z-index: 3;
+}
+/* thẻ nav chỉ bao phủ các phần có nội dung, chứ ko bao phủ toàn bộ header */
+#nav{
+    display: inline-block;
+}
+#nav, .subnav{
+    list-style: none;
+}
+#nav li{
+    
+    /*căn chỉnh subnav vào bên dưới thẻ li*/
+    position: relative;
+}
+
+#nav > li{
+    /* chuyen cac the li sang hang ngang*/
+    /*dàn 100% thẻ li trong thẻ ul */
+    display: inline-block; 
+}
+
+/* css cho các thẻ a có cha là li có cha là thẻ id nav;
+coppy lại thuộc tính của các thẻ li trên menu làm subnav */
+#nav .subnav a{
+    color: #000;
+    text-decoration: none;
+    /* can giua chu vao khung header co chieu cao 46px*/
+    line-height: 46px;
+    padding: 0px 24px;
+    text-transform: uppercase;
+    /* tao cho the a thanh 1 block co chieu cao va rong;
+     khi hover thi se bao phu toan the li*/
+    display: block;
+   /*căn chinh chu lui vao trong so vơi thẻ li */
+    padding: 0 12px;
+    /*chỉnh chieu subnav thấp hơn so với nav*/
+    line-height: 38px;
+}
+
+/* css cho con trực tiếp của thẻ nav*/
+#nav > li > a{
+    color: #fff;
+    text-decoration: none;
+    /* can giua chu vao khung header co chieu cao 46px*/
+    line-height: 46px;
+    padding: 0px 24px;
+    text-transform: uppercase;
+    /* tao cho the a thanh 1 block co chieu cao va rong;
+     khi hover thi se bao phu toan the li*/
+    display: inline-block;
+}
+
+/* tạo hover cho các thẻ a trong subnav */
+/* dùng chung css */
+#nav .subnav li:hover a,
+/*tao thuoc tinh hover khi di chuot vao thi chuyen mau
+hover vào thẻ li thì thuộc tính thẻ a bị thay đổi
+hover trực tiếp vào thẻ con li của nav */
+#nav > li:hover > a{
+    color: #000;
+    background-color:#ccc;
+}
+
+#nav li:hover .subnav{
+    display: block;
+}
+
+#nav .subnav{
+    /*căn chỉnh subnav vào đúng vị trí bên dưới*/
+    display: none;
+    position: absolute;
+    /*subnav cách nav đúng 100% và về bên góc trải thẻ li*/
+    /* làm như vậy để tránh subnav bị lệch hay di chuyển khi trình duyệt có sự thay đổi gì đó*/ 
+    top: 100%;
+    left: 0px;  
+    box-shadow: 0 0 10px #000;
+    /* độ rộng subnav */
+    min-width: 160px;
+    background-color: #fff;
+}
+
+/* cang thuọc tính css vào trong the li */
+/* #nav .subnav li{
+    width: 100%;
+    display: block;
+} */
+
+/* thẻ div tính chất khối kế thừa tất cả chiều ngang của thẻ cha, nhưng khi thêm float vào thì nó sẽ bị mất đi */
+/* để cho search-btn có thể ghi lên trên phần header */ 
+#header .search-btn{
+    float: right;
+    
+}
+
+#header .search-btn:hover{
+    background-color: rgb(236, 18, 18);
+    cursor: pointer;
+}
+
+#header .search-icon{
+    color: #fff;
+    font-size: 24px;
+    padding: 0 20px;
+    /* icon cũng đc coi là một kí tự nên css giống kí tự
+    line -height căn giữa trên dưới với chièu cao tổng 46px = chiều cao header cho icon này */
+    line-height: 46px;
+}
+
+#slider{
+    position: relative;
+    margin-top: 46px ;
+    /* padding  với giá trị % thì nó sẽ bằng % chiều ngang của chính nó; vd : chiều cao 50% của chiều rộng */
+    /* việc padding như này tạo cho thuộc tính background-img
+    có tỉ lệ chiều cao 50% so với chiều ngang , thuận lợi cho việc chỉnh kích thước slide */
+    padding-top: 50%;
+    background: url(/assets/img/sliders/slide\ 1.jpg) top center / cover no-repeat;
+}
+
+#slider .text-content{
+    position: absolute;
+    color: #fff;
+    bottom: 42px;
+    /* căn giữa content vào trong slide */
+    text-align: center;
+    width: 100%;
+
+    /* cach 2 */
+    /* left: 0;
+    right: 0; 
+    text-align: center;*/
+
+    /*cach 3*/
+    /* left: 50%;
+    transform: translateX(50%);
+    text-align: center; */
+}
+
+.text-heading{
+    font-weight: 500;
+}
+
+.decription{
+    margin-top: 25px;
+}
+
+/* content begin */
+#content{
+     
+}
+/* các thành phần section đc dùng chung nên đc css 1 lần và đăj tên giống nhau trong html */
+#content .content-section{
+    /* đặt chiều rộng cho các khung section */
+    max-width: 800px;
+    /* căn giữa section,
+    đồng thời căn chỉnh hai bên */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 64px 16px;
+}
+
+#content .section-heading{
+    /*căn giữa nội dung heading */
+    text-align: center;
+    font-weight: 500;
+    text-transform: uppercase;
+    /* dãn chữ trong heading */
+    letter-spacing: 4px;
+}
+
+#content .section-sub-heading{
+    text-align: center;
+    margin-top: 25px;
+    /* chuyển thành chữ in nghiêng */
+    font-style: italic;
+    /* chinhr đọo trong suốt của chữ */
+    opacity: 0.6;
+}
+
+#content .text{
+    margin-top: 30px;
+    text-align: justify;
+    /* khoảng cách các dòng
+    với tiếng anh thì giá trị là 1.4;
+    với tiếng việt thì giá trị là 1.6( vì có thêm dấu ) */
+   line-height: 1.4;
+}
+
+.member-list{
+    padding-top: 48px;
+    /* căn giữa các nội dung text ảnh và tên */
+    text-align: center;
+}
+
+
+#content .member-name{
+    margin-bottom: 15px;
+}
+
+#content .member-img{
+    width: 154px;
+    border-radius: 4px;
+}
+
+/* tour */
+/* tạo màu background dàn ngang cả trang */
+.tour-section{
+    background-color: #000;
+}
+
+/* vì là trang này ko còn thuộc tính nào trùn nữa nên ko cần #content phía trước class */
+.ticket{
+    margin-top:64px ;
+    background-color: #fff;
+    color: #757575;
+    list-style: none;
+}
+
+/* không đặt class vào thẻ li vì sẽ trung nên lấy li luôn */
+.ticket li{
+    /* set thuộc tính cỡ chữ trước khi padding */
+    font-size: 15px;
+    padding: 11px 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.ticket .ticket-sold-out{
+    background-color: red;
+    color: #fff;
+    padding: 3px 4px;
+    margin-left: 16px;
+}
+
+.ticket .ticket-not-sold{
+    /* khi thẻ có thuộc tính inline nhưng thêm float vào thì thẻ lại tính chất block: có thể chỉnh đc chiều cao chiều ngang */
+    float: right;
+    width: 24px;
+    height: 24px;
+    background-color: #000;
+    color: #fff;
+    /* căn giữa chữ trong thẻ div */
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    /* thẻ span dính padding của thẻ li mà kích thước của nó lại lớn hơn ban đàu sau khi css nên bị lệch xuống dưới, thêm thuộc tinh âm để nó kéo lên vào giữa ô */
+    margin-top: -3px;
+}
+
+/* place */
+.place-list{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.place-list .place-img{
+    width: 100%;
+    display: inherit;
+}
+
+.place-list .place-img:hover{
+    opacity: 0.6;
+}
+
+.place-list .body-item{
+    background-color: #fff;
+    color: #000;
+    font-size: 15px;
+    padding: 16px;
+}
+.body-item .name-item{
+    font-weight: 600;
+    padding: 15px 0;
+}
+.body-item .time-item{
+    padding-bottom: 15px;
+    opacity: 0.6;
+
+}
+.body-item .desc-item{
+
+}
+
+
+.body-item .buy-item-btn:hover{
+    background-color: #ccc;
+    color: #000;
+}
+
+/* tạo một lớp có thuộc tính position fixed để gọi vào modal khi dùng javascrip */
+.modal.open{
+    display: flex;
+}
+
+/* giao diện bật lên khi bấm vào nút buy trên item
+ gọi nó là modal */
+.modal{
+    /* dung tính chất fixed để tạo vùng modal */ 
+    position: fixed;
+    /* căn giữa các nội dung của các thẻ bên trong vào giữa */
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    /* tạo màu phủ mờ trên toàn màn hình bên ngoài modal để ng dùng focus vào vào */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* phủ toàn màu mờ toàn màn hình */
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.modal-main{
+    /* thẻ cah của position: fixed */
+    position: relative;
+    background-color: #fff;
+    /* đặt chiều cao thấp nhất khi content chưa tới để làm giao diện cho dễ hơn */
+    min-height: 300px;
+    /* dặt chiều ngang cho modal khi màn hình trình duyệt nhỏ lại vẫn có thể căn đều hai bên nội dung */
+    width: 900px;
+    max-width: calc(100% - 40px);
+    /* tạo hiệu ứng di chuyển xuống khi click */
+    animation: modalFadeIn ease .6s ;
+}
+
+.modal-close:hover{
+    color: #ccc;
+}
+
+.modal-close{
+    padding: 12px;
+    color: #fff;
+    /* dấu X thoát ra để đóng modal
+    đặt thẻ div riêng ở bên ngoài */
+    /* cái position: relative đặt ở thẻ cha là modal */
+    position:absolute;
+    top: 0;
+    right: 0;
+    /* chuyển cusor: pointer để có cảm giác ấn cho ng dùng */
+    cursor: pointer;
+}
+
+.modal-header{
+    /*căm giữa với flex */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 0;
+    background-color: #009688;
+    font-size: 30px;
+    color: #fff;
+    letter-spacing: 3px;
+}
+
+
+.modal-header i{
+    margin-right:16px ;
+}
+
+.modal-body{
+    margin: 16px;
+}
+
+.modal-body #label-ticket {
+    display: block;
+    margin: 15px 0;
+    padding-top: 20px;
+}
+
+.modal-body #model-input1,#model-input2{
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    padding: 9px 0;
+}
+
+.modal-body #pay{
+    background-color: #009688;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    padding: 16px 0px;
+    text-transform: uppercase;
+    margin-top: 25px;
+}
+/* cursor: poiter đặt ở thẻ hover hoặc thẻ chính đều được */
+.modal-body #pay:hover{
+    opacity: 0.9;
+    color:#000;
+    cursor: pointer;
+}
+
+/* tao hiệu ứng đi xuống với hàm @keyframe */
+@keyframes modalFadeIn{
+    from{
+        /*hiệu ứng mờ đến rõ dần hiện ra */
+        opacity: 0;
+        /* set vị trí ban đàu */
+        transform: translateY(-90px);
+    }
+    to{
+        opacity: 1;
+        /* set vị trí kết thúc */
+        transform: translateY(0);
+    }
+}
+
+.modal-footer{
+    margin: 16px;
+    /* căn sang phải */
+    float: right;
+}
+
+.modal-footer a{
+    color: #2196F3;
+}
+
+.contact{
+    margin-top: 45px;
+}
+
+.contact-info{
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.contact-info i[class*="fas"]{
+    width: 30px;
+    display: inline-block;
+} 
+
+.contact-form{
+
+}
+
+.contact-form .form-control{
+    padding: 10px 4px;
+    width: 100%;
+    margin-top: 9px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.contact-form .contact-submit-btn {
+    float: right;
+    margin-top: 16px;
+    background-color: #000;
+    color: #fff;
+    padding: 9px 15px;
+    border: 1px solid #000;
+}

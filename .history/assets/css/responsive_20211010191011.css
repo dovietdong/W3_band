@@ -1,0 +1,119 @@
+/* PC */
+@media (min-width: 1024px){
+    /* ẩn đi icon 3 sọc */
+    #header #mobile-menu{
+        display: none;
+    }
+}
+
+/* MOBILE & TABLET */
+/* css những thuộc tính có cả trên mobile và tablet */
+@media (max-width: 1023px){
+
+    /* tăng độ rộng của nút bấm khi màn hình là tablet hay mobile giúp cho ngón tay người dùng dễ bấm */
+
+    /* khi người dùng phải chạm ngond tay vào thì luôn đảm bảo nó có độ cao 48 -42 px */
+    .btn{
+        padding: 16px 20px;
+    }
+
+    /* cũng làm cho form rộng 48px để ngón tay dễ chạm vào */
+    .contact-form .form-control {
+        padding: 15px 4px;
+    }
+
+    /* tăng khoảng cách giữa các dòng để dễ nhìn và người dùng dễ bấm */
+    .contact-info {
+        font-size: 18px;
+        line-height: 2;
+    }
+
+    /* tăng chiêu rộng để người dùng dễ bấm đặc biệt là người già ngond tay run */
+    #footer-section .social-list a{
+        padding: 0 12px;
+    }
+
+    /* cũng tương tự như trên */
+    #footer-section .coppy-right a {
+        padding: 14px 0;
+        /* để cho cái link tạo 1 khoảng cách với bên trên , khoag trống để người dùng bấm không không trượt phát nào */
+        display: inline-block;
+    }
+  
+ }
+
+
+/* TABLET */
+@media (min-width: 740px) and (max-width: 1023px){
+    /* ẩn đi icon 3 sọc */
+    #header #mobile-menu{
+        display: none;
+    }
+
+}
+
+/* MOBILE */
+@media (max-width: 739px){
+    /* tao 1 class dung chung cho mobile */
+    /* tạo 1 class mới như này làm cho clean code hơn, giúp người đọc dễ hiểu và hiểu đúng nghĩa hơn */
+    /* thêm !important vào các class css dùng chung của mobile */
+
+    .mobile-full-width,
+    .mobile-col-full{
+        width: 100% !important;
+    }
+
+    
+   
+    
+    /* không hiển thị những menu con nằm ngoài header */
+    #header{
+        overflow: hidden;
+    }
+    
+    /* ẩn đi ô search khi ở mobile */
+    #header .search-btn{
+        display: none;
+    }
+    
+    /* căn chỉnh lại cái icon 3 sọc */
+    #header #mobile-menu {
+        padding-right:  40px;
+    }
+    
+    #nav {
+        display: block;
+    }
+    
+    /* chuyẻn menu thành hàng dọc */
+    #nav > li {
+        display: block;
+    }
+    
+    #nav > li:hover {
+        background-color: #fff;
+    }
+    
+    /* tắt cái position : absolute của khi trên pc */
+    #nav .subnav{
+        position: unset;
+        background-color: #333;
+    }
+    
+    #nav .subnav a {
+        color: #fff;
+        padding: 5px 38px;
+        text-transform:capitalize ;
+    }
+    
+    #content .content-section{
+        padding-top: 32px;
+        padding-bottom: 64px;
+    }
+
+    .contact-info {
+        padding-bottom: 36px;
+    }
+ 
+}
+

@@ -1,0 +1,73 @@
+/* PC */
+@media (min-width: 1024px){
+    /* ẩn đi icon 3 sọc */
+    #header #mobile-menu{
+        display: none;
+    }
+}
+
+/* TABLET */
+@media (min-width: 740px) and (max-width: 1023px){
+    /* ẩn đi icon 3 sọc */
+    #header #mobile-menu{
+        display: none;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 739px){
+    /* tao 1 class dung chung cho mobile */
+    .mobile-col-full{
+        width: 100%;
+        
+    }
+
+    #content .content-section{
+        padding-top: 32px;
+        padding-bottom: 64px;
+    }
+
+    /* căn chỉnh hình ảnh bằng 60% kích thước chiều ngang của màn hình nhỏ */
+    #content .member-img{
+        width: 60%;
+        padding-bottom: 30px;
+    }
+
+     /* không hiển thị những menu con nằm ngoài header */
+     #header{
+        overflow: hidden;
+    }
+
+    /* ẩn đi ô search khi ở mobile */
+    #header .search-btn{
+        display: none;
+    }
+
+    /* căn chỉnh lại cái icon 3 sọc */
+    #header #mobile-menu {
+        padding-right:  40px;
+    }
+
+    #nav {
+        display: block;
+    }
+
+    /* chuyẻn menu thành hàng dọc */
+    #nav > li {
+        display: block;
+    }
+
+    /* tắt cái position : absolute của khi trên pc */
+    #nav .subnav{
+        position: unset;
+        background-color: #333;
+    }
+
+    #nav .subnav a {
+        color: #fff;
+        padding: 5px 38px;
+        text-transform:capitalize ;
+    }
+ 
+}
+

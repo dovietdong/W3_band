@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/font/fontawesome-free-5.15.4-web/css/all.css">
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
+            <!-- begin: nav -->
+            <ul id="nav">
+                <li><a href="">home</a></li>
+                <li><a href="">band</a></li>
+                <li><a href="">tour</a></li>
+                <li><a href="">contact</a></li>
+                <li>
+                    <a href="">
+                        more
+                        <i class="fas fa-caret-down"></i>
+                    </a>
+                    <ul class="subnav">
+                        <li><a href="">subnav1</a></li>
+                        <li><a href="">sub2</a></li>
+                        <li><a href="">s3</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- end: nav -->
+
+            <!-- begin: search -->
+            <div class="search-btn">
+                <i class="search-icon fas fa-search"></i>
+            </div>
+            <!-- end: search -->
+        </div>
+        <!-- begin slide -->
+        <div id="slider">
+            <div class="text-content">
+                <h1 class="text-heading">
+                    New York
+                </h1>
+                <p class="decription">
+                    The atmosphere in New York is lorem ipsum.
+                </p>
+            </div>
+        </div>
+        <!-- end slide -->
+
+        <!-- begin conyent -->
+        <div id="content">
+            <!-- about -->
+            <div class="content-section">
+                <h1 class="section-heading">
+                    THE BAND
+                </h1>
+                <p class="section-sub-heading">
+                    We love music
+                </p>
+                <p class="text">
+                    We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                    enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.
+                </p>
+                <div class="row member-list">
+                    <div class="col col-third">
+                        <p class="member-name">Name</p>
+                        <img src="./assets/img/member/member1.jpg" alt="name" class="member-img">
+                    </div>
+                    <div class="col col-third">
+                        <p class="member-name">Name</p>
+                        <img src="./assets/img/member/member1.jpg" alt="name" class="member-img">
+                    </div>
+                    <div class="col col-third">
+                        <p class="member-name">Name</p>
+                        <img src="./assets/img/member/member1.jpg" alt="name" class="member-img">
+                    </div>
+                    <!-- đặt class clear xuống dưới cùng các item
+                    khi các item đều có css float  -->
+                    <!-- bỏ đi vì đã tạo lớp giả ::after sau mỗi class row thì sẽ tưj động thêm thuộc 
+                    tính clear;both đã đc định nghiaz   -->
+                    <!-- <div class="clear"></div> -->
+                </div>
+            </div>
+
+            <!-- tour -->
+            <!-- lam 1 thẻ div bao bọc ngoài để set thuộc tính background đen tràn cả màn hình -->
+            <div class="tour-section">
+                <div class="content-section">
+                    <h1 class="section-heading text-white">
+                        TOUR DATES
+                    </h1>
+                    <p class="section-sub-heading text-white">
+                        Remember to book your tickets!
+                    </p>
+
+                    <ul class="ticket">
+                        <li>
+                            September <span class="ticket-sold-out"> Sold out</span>
+                        </li>
+                        <li>
+                            October <span class="ticket-sold"> Sold out</span>
+                        </li>
+                        <li>
+                            November <span class="ticket-not-sold">3</span>
+                        </li>
+                    </ul>
+
+                    <div class="row place-list">
+                        <div class="col col-third">
+                            <img class="place-img" src="./assets/img/places/palce1.jpg" alt="New York">
+                            <div class="body-item">
+                                <div class="name-item">New York</div>
+                                <div class="time-item">Fri 27 Nov 2016</div>
+                                <div class="desc-item">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</div>
+                                <button class="buy-item-btn js-buy-ticket">Buy Tickets</button>
+                            </div>
+                        </div>
+                        <div class="col col-third">
+                            <img class="place-img" src="./assets/img/places/palce2.jpg" alt="Paris
+                        ">
+                            <div class="body-item">
+                                <div class="name-item">Paris
+                                </div>
+                                <div class="time-item">Fri 27 Nov 2016</div>
+                                <div class="desc-item">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</div>
+                                <button class="buy-item-btn js-buy-ticket">Buy Tickets</button>
+                            </div>
+                        </div>
+                        <div class="col col-third">
+                            <img class="place-img" src="./assets/img/places/sanfran.jpg" alt="San Francisco">
+                            <div class="body-item">
+                                <div class="name-item">San Francisco</div>
+                                <div class="time-item">Fri 27 Nov 2016</div>
+                                <div class="desc-item">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</div>
+                                <button class="buy-item-btn js-buy-ticket">Buy Tickets</button>
+                            </div>
+                        </div>
+                        <!-- bỏ đi vì đã tạo lớp giả ::after sau mỗi class row thì sẽ tưj động thêm thuộc 
+                    tính clear;both đã đc định nghiaz   -->
+                        <!-- <div class="clear"></div> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- contact -->
+            <div class="content-section">
+                <h1 class="section-heading">
+                    CONTACT
+                </h1>
+                <p class="section-sub-heading">
+                    Fan? Drop a note!
+                </p>
+
+                <div class="row contact-form">
+                    <div class="col col-half">
+                        <p><i class="fas fa-map-marker-alt"></i>Chicago, US</p>
+                        <p><i class="fas fa-phone-alt"></i>>Phone: +00 151515</p>
+                        <p><i class="fas fa-envelope"></i>Email: mail@mail.com</p>
+                    </div>
+                    <div class="col col-half">
+                        <form action="">
+                            <div class="row">
+                                <div class="col col-half">
+                                    <input type="text" class="form-control" placeholder="Name">
+                                </div>
+                                <div class="col col-half">
+                                    <input type="email" class="form-control" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="">
+                                    <input type="text" class="form-control col col-full" placeholder="Message">
+                                </div>
+                            </div>
+                            <input type="submit" value="SEND">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- image -->
+        <div class="content-section">
+
+        </div>
+
+    </div>
+
+    <div id="footer">
+
+    </div>
+
+    <div class="modal js-modal">
+        <div class="modal-main js-modal-main">
+            <div class="modal-close js-modal-close">
+                <i class="fas fa-times"></i>
+            </div>
+            <header class="modal-header">
+                <i class="fas fa-suitcase"></i>
+                Tickets
+            </header>
+            <div class="modal-body">
+                <!-- for= 'id' để khi click chuột vào vái label thì con trỏ sẽ tưh dộng xuống chỗ điền, tiện cho ng dùng -->
+                <label for="model-input1" id="label-ticket">
+                    <i class="fas fa-shopping-cart"></i>
+                    Tickets, $15 per person
+                </label>
+                <input type="text" placeholder="How many?" id="model-input1">
+                <label for="model-input2" id="label-ticket">
+                    <i class="fas fa-user"></i>
+                    Send To
+                </label>
+                <input type="text" placeholder="Enter email" id="model-input2">
+
+                <div id="pay">
+                    pay
+                    <i class="fas fa-check"></i>
+                </div>
+            </div>
+            <footer class="modal-footer">
+                <p>Need <a href="#">help?</a></p>
+            </footer>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- javascript cho modal -->
+    <script>
+        /* tao 1 biến gọi ra tất cacr class có tên js-buy-ticket */
+        const buyBtns = document.querySelectorAll('.js-buy-ticket')
+        /* taoj 1 bien khac goi vao the modal */
+        const modal = document.querySelector('.js-modal')
+        /* tạo 1 biến trong javascript gọi đến class chứa dấu X*/
+        const closeModal = document.querySelector('.js-modal-close')
+
+        /* chọn ra vùng con không bị ảnh hưởng bởi tính chất nổi bọt của sự kiện */
+        const modalMain = document.querySelector('.js-modal-main')
+
+        /* hàm thực hiện thêm class open sau khi bắt đc sự kiện, hàm này gọi đến biến gọi vào thẻ modal ở trên */
+        function showBuyTicket() {
+            modal.classList.add('open')
+        }
+        /* hàm thực hiên sự kiện đóng giao diẹn modal (xoa đi class open)*/
+        function closeBuyTicket() {
+            modal.classList.remove('open')
+        }
+
+        /* taoj 1 vòng for có biến buyBtn chay lần lượt qua các class trong buyBtns */
+        /* đồng thời lắng nghe sự kiện và tạo 1 hàm mong muốn */
+        for (const buyBtn of buyBtns) {
+            buyBtn.addEventListener('click', showBuyTicket)
+        }
+        /*bắt sự kiện click bằng cách gọi biến vừa tạo để gọi class rồi gọi lệnh addEventListener sau đó truyền hàm vào */
+        closeModal.addEventListener('click', closeBuyTicket)
+        /* sự kiên click ra ngoài thì đóng modal */
+        /* chọn vào modal vì nó bao phủ toàn bộ khung màn hình */
+        modal.addEventListener('click', closeBuyTicket)
+
+        /* ngăn chặn hiệu ứng nổi bọt cua sự kiện */
+        modalMain.addEventListener('click', function (event) {
+            event.stopPropagation();
+        })
+    </script>
+</body>
+
+</html>
